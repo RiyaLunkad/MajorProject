@@ -1,0 +1,239 @@
+﻿@page
+@model PrivacyModel
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Landing Page</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .about-item {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            background-color: pink padding: 80px, 30px;
+            box-shadow: 0 0 9px rgba(0, 0, 0 .6);
+        }
+            .about-item h3 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+
+            .about-item hr {
+                width: 46px;
+                height: 3px;
+                background-color: hotpink;
+                margin: 0 auto;
+                border: none;
+            }
+
+            .about-item p {
+                margin-top: 20px;
+            }
+
+            .about-item:hover {
+                background-color: darkslategrey;
+            }
+
+                .about-item:hover i,
+                .about-item:hover h3,
+                .about-item:hover p {
+                    color: #fff
+                }
+
+                .about-item:hover hr {
+                    background-color: #fff;
+                }
+
+                .about-item:hover i,
+                .about-item:hover h3,
+                .about-item:hover p {
+                    transition: all 400ms ease-in-out;
+                }
+                
+                .fa:hover {
+                opacity: 0.7;
+                }
+
+                .fa-facebook {
+                background: #3B5998;
+                color: white;
+                }
+    
+                .fa-twitter {
+                background: #55ACEE;
+                color: white;
+                }
+                .fa-instagram {
+                background: #125688;
+                color: white;
+                }
+    </style>
+
+</head>
+<body style="margin-bottom: 0px; background-image:url('https://media.istockphoto.com/vectors/cyber-security-and-information-or-network-protection-future-web-for-vector-id1181403907?k=20&m=1181403907&s=170667a&w=0&h=4hYSKd3X9k_l89DF-8mfSjfVHqDtQ7CTqFKa-isubFo=');background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-success sticky-top">
+        <a class="navbar-brand" href="#">
+            <img src="~/Images/logo.jpeg" alt="Logo" style="width:50px;">
+        </a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">Cyber Crime Complain</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- NAVBAR LINKS -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                </li>
+               <!--- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">User</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="users" asp-action="Create">Report</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/CyberCells">Report Status</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Authority</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="CyberCells" asp-action="Index">CyberCell</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/users">All Records</a>
+                    </div>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link active" asp-area="" asp-page="/SafetyTips">Safety Tips</a>
+                </li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
+    <!--Header section-->
+    <!-- Head img -->
+    <div id="carouselExampleControls"
+         class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Images/Law.jpg"
+                     class="d-block w-100" alt="cyber" style="max-height:400px;">
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- Head Image -->
+    <!--JUmbotron-->
+    <div class="container">
+        <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-black"
+          style="background-image: url('https://t3.ftcdn.net/jpg/02/69/46/42/360_F_269464287_Q2DoeIRT847orJlYDSX59T8pjlF9nO94.jpg');background-repeat: no-repeat;background-size: cover">
+             
+            <h1 class="mb-3 h2">About Us</h1>
+
+            <h4><--Cyber Crime Complain--></h4>
+
+            <p>
+                The online portal where a victim can file a cyber crime complaint is 
+                an initiative of Government of India that caters to complaints pertaining to the online
+                sexually explicit content such as Rape content
+                and other cyber crimes such as social media crimes, online financial frauds, ransomware, hacking, cryptocurrency
+                crimes, and online cyber trafficking.
+            </p>
+        </div>
+    </div>
+    <!--JUmbotron-->
+    <div class="container">
+        <div class="alert alert-primary">
+            <strong>Our mission,vision and Work </strong> 
+        </div>
+        <!-- box-info -->
+                <div class="content-box" style="color:black; bgcolor: yellow;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="about-item text-center">
+                                    <h3>Mission</h3>
+                                    <hr>
+                                    <p>
+                                        The main mission of National Cyber Safety and Security Standards is to protect
+                                        our national critical infrastructure from cyber related threats.
+                                        Every other day, we hear news of cyber criminals hacking into banks, online sites, companies etc.
+                                        It is very obvious that something has to be done to secure our IT infrastructure.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="about-item text-center">
+                                    <h3>Vision</h3>
+                                    <hr>
+                                    <p>
+                                        We reduce the vulnerability of the digital environment implementing combined cyber-security and
+                                        cyber-defense systems that neutralize advanced threats, thereby contributing to the improvement of
+                                        security for all.It is very obvious that something has to be done to secure our IT infrastructure.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="about-item text-center">
+                                    <h3>Work</h3>
+                                    <hr>
+                                    <p>
+                                        Incorporated several data thiefs in recent task of hack-hackers. Cyber cell has reached to maximum of the
+                                        hackers by catching their guid from tracking and other details. As the hackers also changes their current location
+                                        with corrupt and local networks but we are still in success to catch them.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!-- Box-Info -->
+     <!--Added the footer area-->
+
+    <div class="container" style="padding-bottom: 0px; margin-bottom: 0px;">
+
+       <footer class="bg-dark text-center text-lg-start text-white">
+        <!-- Grid container -->
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            <h6 style="color:whitesmoke !important;">
+                Connect with us
+            </h6>
+            <!-- Facebook -->
+            
+             <a href="https://www.facebook.com/CyberDostI4C" class="fa fa-facebook"></a>
+             <!-- Twitter -->
+             <a href="https://twitter.com/cyberdost" class="fa fa-twitter"></a>
+              
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/CyberDostI4C/" class="fa fa-instagram"></a>
+      
+             </div>
+             <h6 style="color:whitesmoke !important;">
+            Made By Riya Lunkad 
+        </h6>
+            <!-- Grid container -->
+            <!-- Api Documentation -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © For API Documentation:
+                <a class="text-white" href="/Swagger">Click Here</a>
+            </div>
+            <!--  Api Documentation  -->
+            </footer>
+        </div>
+<!--
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    -->
+</body>
+</html>
+

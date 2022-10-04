@@ -1,0 +1,40 @@
+﻿@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = "Confirm email";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+<body style="margin-bottom: 0px; background-image:url('https://media.istockphoto.com/vectors/cyber-security-and-information-or-network-protection-future-web-for-vector-id1181403907?k=20&m=1181403907&s=170667a&w=0&h=4hYSKd3X9k_l89DF-8mfSjfVHqDtQ7CTqFKa-isubFo=');background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="#">
+            <img src="~/Images/logo.jpeg" alt="Logo" style="width:50px;">
+        </a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">Cyber Crime Complain</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- NAVBAR LINKS -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link active" asp-area="" asp-page="/SafetyTips">Safety Tips</a>
+                </li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
+
+ 
+<h1>@ViewData["Title"]</h1>
+</body>
+</html>

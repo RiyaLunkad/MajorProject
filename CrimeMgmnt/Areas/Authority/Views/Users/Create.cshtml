@@ -1,0 +1,105 @@
+﻿@model CrimeMgmnt.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body style="margin-bottom: 0px; background-image:url('https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-an-empty-sky-blue-coloured-grungy-vector-id1139678803?k=20&m=1139678803&s=612x612&w=0&h=jGhaWq_34qr6OQlJMlf4doDv7txteI0fVPDFG3sPzew=');background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="~/Images/logo.jpeg" alt="Logo" style="width:50px;">
+        </a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">Cyber Crime Complain</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- NAVBAR LINKS -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">User</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="users" asp-action="Create">Report</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/CyberCells">Report Status</a>
+                    </div>
+                </li>
+               
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    </body>
+    </html>
+<h1>Create</h1>
+
+<h4>New Report</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mobile" class="control-label"></label>
+                <input asp-for="mobile" class="form-control" />
+                <span asp-validation-for="mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimePlatform" class="control-label"></label>
+                <input asp-for="CrimePlatform" class="form-control" />
+                <span asp-validation-for="CrimePlatform" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimeDescription" class="control-label"></label>
+                <input asp-for="CrimeDescription" class="form-control" />
+                <span asp-validation-for="CrimeDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" min="2000-01-01" max="2022-09-30" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place" class="control-label"></label>
+                <input asp-for="Place" class="form-control" />
+                <span asp-validation-for="Place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="https://localhost:44315/">Back To Home</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

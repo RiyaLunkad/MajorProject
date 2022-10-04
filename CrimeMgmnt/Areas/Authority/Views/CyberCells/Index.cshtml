@@ -1,0 +1,122 @@
+﻿@model IEnumerable<CrimeMgmnt.Models.CyberCell>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@using Microsoft.AspNetCore.Identity
+@using CrimeMgmnt.Models
+
+@*----- to find if user is logged in *@
+@inject SignInManager<IdentityUser> _signInManager
+
+@*----- gets the user object to see properties, roles *@
+@inject UserManager<IdentityUser> _userManager                  
+
+@{
+    bool isLoggedIn = _signInManager.IsSignedIn(this.User);
+
+    bool isUserAdmin = false;
+    IdentityUser user = await _userManager.GetUserAsync(this.User);         // gets the Logged In User
+    if (user != null)
+    {
+        isUserAdmin = await _userManager.IsInRoleAsync(user, MyIdentityRoleNames.AppAdmin.ToString());
+    }
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body style="margin-bottom: 0px; background-image:url('https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-an-empty-sky-blue-coloured-grungy-vector-id1139678803?k=20&m=1139678803&s=612x612&w=0&h=jGhaWq_34qr6OQlJMlf4doDv7txteI0fVPDFG3sPzew=');background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="~/Images/logo.jpeg" alt="Logo" style="width:50px;">
+        </a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">Cyber Crime Complain</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- NAVBAR LINKS -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                </li>
+                <!---
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">User</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="users" asp-action="Create">Report</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/CyberCells">Report Status</a>
+                    </div>
+                </li>-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Authority</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="CyberCells" asp-action="Index">CyberCell</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/users">All Records</a>
+                    </div>
+                </li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsEnabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+            
+                @if(isLoggedIn) {
+    @if(isUserAdmin) {
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ControlRoomId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ControlRoomId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ControlRoomId">Delete</a>
+            </td>
+    }
+                 }
+
+            
+        </tr>
+}
+    </tbody>
+</table>

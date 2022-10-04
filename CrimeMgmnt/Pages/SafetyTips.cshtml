@@ -1,0 +1,199 @@
+﻿@page
+@model CrimeMgmnt.Pages.SafetyTipsModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        ul, #myUL {
+            list-style-type: disc;
+        }
+        #myUL {
+            margin: 0;
+            padding: 0;
+        }
+        #space {
+            margin-bottom: 40px;
+        }
+        .caret {
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+        }
+            .caret::before {
+                content: "\25B6";
+                color: black;
+                display: inline-block;
+                margin-right: 6px;
+            }
+        .caret-down::before {
+            -ms-transform: rotate(90deg); /* IE 9 */
+            -webkit-transform: rotate(90deg); /* Safari */
+             transform: rotate(90deg);
+        }
+        .nested {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+    </style>
+
+</head>
+<body style="margin-bottom: 0px; background-image:url('https://media.istockphoto.com/vectors/cyber-security-and-information-or-network-protection-future-web-for-vector-id1181403907?k=20&m=1181403907&s=170667a&w=0&h=4hYSKd3X9k_l89DF-8mfSjfVHqDtQ7CTqFKa-isubFo=');background-repeat: no-repeat; background-size: cover; background-position: center center;">">
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="#">
+            <img src="~/Images/logo.jpeg" alt="Logo" style="width:50px;">
+        </a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">Cyber Crime Complain</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- NAVBAR LINKS -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                </li>
+               <!--- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">User</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="users" asp-action="Create">Report</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/CyberCells">Report Status</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Authority</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="CyberCells" asp-action="Index">CyberCell</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/users">All Records</a>
+                    </div>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link active" asp-area="" asp-page="SafetyTips">Safety Tips</a>
+                </li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-dark"
+         style="background-image: url('https://t3.ftcdn.net/jpg/02/69/46/42/360_F_269464287_Q2DoeIRT847orJlYDSX59T8pjlF9nO94.jpg');background-repeat: no-repeat;background-size: cover">
+        <h1 class="mb-3 h2">Safety Tips To Remember</h1>
+
+        <h4>Your Safety is in your hand</h4>
+
+    </div>
+    <!-- Jumbotron -->
+
+    <ul id="myUL">
+
+        <li id="space">
+            <span class="caret" style="font-size: 25px">Do's for Cyber Security</span>
+            <ul class="nested">
+                <li>Use different passwords for different accounts. If one password gets hacked, your other accounts are not compromised</li>
+                <li>Lock your computer and mobile phone when not in use. This protects data from unauthorized access and use.</li>
+                <li>Perform regular backups of important data.</li>
+                
+
+            </ul>
+        </li>
+        <li id="space">
+            <span class="caret" style="font-size: 25px">Don'ts for Cyber Security</span>
+            <ul class="nested">
+                <li>Install unauthorized programs on your work computer. Malicious applications often pose as legitimate software.Contact your IT support staff to verify if an application may be installed. </li>
+                <li>Click on links from an unknown or untrusted source. Cyber attackers often use them to trick you into visiting
+       malicious sites and downloading malware that can be used to steal data and damage networks. </li>
+                <li>Never reply to e-mail(s) requesting financial or personal information. </li>
+                
+            </ul>
+        </li>
+        
+    </ul>
+
+      <div class="container" style="padding-bottom: 0px; margin-bottom: 0px;">
+
+   <footer class="bg-dark text-center text-lg-start text-white">
+        <!-- Grid container -->
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            <h6 style="color:whitesmoke !important;">
+                Connect with us
+            </h6>
+            <!-- Facebook -->
+            
+             <a href="https://www.facebook.com/CyberDostI4C" class="fa fa-facebook"></a>
+             <!-- Twitter -->
+             <a href="https://twitter.com/cyberdost" class="fa fa-twitter"></a>
+              
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/CyberDostI4C/" class="fa fa-instagram"></a>
+      
+             </div>
+             <h6 style="color:whitesmoke !important;">
+            Made By Riya Lunkad 
+        </h6>
+
+        <!-- Grid container -->
+        <!-- Api Documentation -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © For API Documentation:
+            <a class="text-white" href="/Swagger">Click Here</a>
+        </div>
+        <!--  Api Documentation  -->
+    </footer>
+    </div>
+
+    <script>
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function () {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+        }
+    </script>
+
+</body>
+</html>
+

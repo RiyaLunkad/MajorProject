@@ -1,0 +1,115 @@
+﻿@model CrimeMgmnt.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Landing Page</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="margin-bottom: 0px; background-image:url('https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-an-empty-sky-blue-coloured-grungy-vector-id1139678803?k=20&m=1139678803&s=612x612&w=0&h=jGhaWq_34qr6OQlJMlf4doDv7txteI0fVPDFG3sPzew=');background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="#">
+            <img src="~/Images/logo.jpeg" alt="Logo" style="width:50px;">
+        </a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">Cyber Crime Complain</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- NAVBAR LINKS -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">User</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="users" asp-action="Create">Report</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/CyberCells">Report Status</a>
+                    </div>
+                </li>
+                <!---<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Authority</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           asp-area="Authority" asp-controller="CyberCells" asp-action="Index">CyberCell</a>
+                        <a class="dropdown-item" href="https://localhost:44315/Authority/users">All Records</a>
+                    </div>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link active" asp-area="" asp-page="/SafetyTips">Safety Tips</a>
+                </li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
+</body>
+</html>
+<div>
+   < h1>Details</h1>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.mobile)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.mobile)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CrimePlatform)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CrimePlatform)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CrimeDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CrimeDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.UserId" class="btn btn-primary">Edit</a> |
+    <a href="https://localhost:44315/" class="btn btn-danger">Back To Home</a>
+</div>
